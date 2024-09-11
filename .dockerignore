@@ -1,0 +1,12 @@
+
+# Ignore node_modules directory
+mysql-init/
+
+# Ignore Docker-related files
+docker-compose.yml
+dockerfile
+.dockerignore
+
+# Ignore version control system directories
+.git
+.gitattributes

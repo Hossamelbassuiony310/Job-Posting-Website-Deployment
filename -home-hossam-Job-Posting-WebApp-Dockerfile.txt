@@ -1,0 +1,3 @@
+/home/hossam/Job-Posting-WebApp/Dockerfile1
+/home/hossam/Job-Posting-WebApp/docker-compose.yml
+/home/hossam/Job-Posting-WebApp/.dockerignore

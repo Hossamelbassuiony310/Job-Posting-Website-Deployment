@@ -1,0 +1,42 @@
+version: '3.1'
+
+services:
+  web:
+    build:
+      dockerfile: Dockerfile1
+    
+    ports:
+      - "3000:80"
+    
+    networks:
+      - app-network
+    
+    depends_on:
+      - db
+
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=linkedin_clone_db
+      - DB_USER=root
+      - DB_PASSWORD=rootpass
+
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=linkedin_clone_db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=rootpass
+ 
+    volumes:
+      - home/hossam/Job-Posting-WebApp/db:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    
+    networks:
+      - app-network
+
+volumes:
+  db-data:
+
+networks:
+  app-network:
